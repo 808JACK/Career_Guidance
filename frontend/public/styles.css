@@ -1,0 +1,367 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header - Enhanced Styling */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.7em 1.5em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Highlight Underline Effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
+}
+
+
+/* Section - Glass Morphism with Animation */
+section {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    margin: 2em auto;
+    padding: 2em;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section h2 {
+    color: #6a11cb;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+section p {
+    font-size: 1.15em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Decorative Circles - Animated */
+.decorative-circle {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(103, 126, 234, 0.3), rgba(118, 75, 162, 0.1));
+    filter: blur(40px);
+    z-index: -1;
+    animation: moveCircles 10s infinite alternate ease-in-out;
+}
+
+.decorative-circle:nth-child(1) {
+    top: -150px;
+    right: -150px;
+}
+
+.decorative-circle:nth-child(2) {
+    bottom: -150px;
+    left: -150px;
+}
+
+@keyframes moveCircles {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(20px, -20px);
+    }
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards - Gradient Borders */
+.course-card, .guidance-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5em;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    border: 2px solid transparent;
+    background: linear-gradient(to bottom, #fff, #fff) padding-box,
+                linear-gradient(135deg, #667eea, #764ba2) border-box;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover, .guidance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(103, 126, 234, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .course-container, .guidance-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .decorative-circle {
+        display: none;
+    }
+}
+/* General Button Styles */
+.action-button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px 5px;
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific Button Styles */
+.enroll-button {
+    background: linear-gradient(135deg, #22c1c3, #fdbb2d);
+}
+
+.enroll-button:hover {
+    background: linear-gradient(135deg, #fdbb2d, #22c1c3);
+}
+
+.assessment-button {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+.assessment-button:hover {
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+}
+
+.careers-button {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+
+.careers-button:hover {
+    background: linear-gradient(135deg, #a8e063, #56ab2f);
+}
+
+.resume-button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.resume-button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+}
+
+.prepare-button {
+    background: linear-gradient(135deg, #007991, #78ffd6);
+}
+
+.prepare-button:hover {
+    background: linear-gradient(135deg, #78ffd6, #007991);
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+#home .home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+#home .text-content {
+    flex: 1;
+}
+
+#home .text-content h1 {
+    font-size: 2.5em;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+#home .text-content p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Image Content - Stretch to Half of Section */
+#home .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#home .blend-image {
+    width: 100%; /* Stretch the image to 100% of its container */
+    height: 100%; /* Ensure the image covers the full height */
+    object-fit: cover; /* Ensure the image covers without distortion */
+    border-radius: 16px;
+    position: relative;
+    opacity: 0.8;
+    filter: blur(2px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+#home .blend-image:hover {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1.05);
+    box-shadow: 0 15px 45px rgba(31, 38, 135, 0.3);
+}
+
+/* Mask for Blending */
+#home .blend-image {
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #home .image-content {
+        justify-content: center;
+        width: 100%;
+    }
+    #home .blend-image {
+        width: 100%; /* Make image take full width on small screens */
+        height: auto;
+    }
+}
+
+

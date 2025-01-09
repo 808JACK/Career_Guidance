@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment</title>
+    <link rel="stylesheet" href="CareerAssist.css">
+</head>
+<body>
+    
+
+    <section id="home">
+        <h1>Career Assessment Tool</h1>
+        <div class="container">
+            <form id="assessmentForm">
+                <div class="form-group">
+                    <label>Do you enjoy analyzing data and solving problems?</label>
+                    <input type="radio" name="analyticalSkills" value="1"> Yes
+                    <input type="radio" name="analyticalSkills" value="0"> No
+                </div>
+
+                <div class="form-group">
+                    <label>Are you comfortable with technical tasks (e.g., coding, engineering)?</label>
+                    <input type="radio" name="technicalKnowledge" value="1"> Yes
+                    <input type="radio" name="technicalKnowledge" value="0"> No
+                </div>
+
+                <div class="form-group">
+                    <label>Do you enjoy creative activities (e.g., designing, writing)?</label>
+                    <input type="radio" name="creativity" value="1"> Yes
+                    <input type="radio" name="creativity" value="0"> No
+                </div>
+
+                <div class="form-group">
+                    <label>Do you have strong leadership or management skills?</label>
+                    <input type="radio" name="leadership" value="1"> Yes
+                    <input type="radio" name="leadership" value="0"> No
+                </div>
+
+                <div class="form-group">
+                    <label>Do you prefer analytical work (1) or creative work (0)?</label>
+                    <input type="radio" name="preferredWorkType" value="1"> Analytical
+                    <input type="radio" name="preferredWorkType" value="0"> Creative
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+
+            <div id="result"></div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
